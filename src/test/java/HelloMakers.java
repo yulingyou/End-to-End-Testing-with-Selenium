@@ -5,23 +5,24 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.File;
 import org.openqa.selenium.OutputType;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class HelloMakers {
     public static void main(String[] args) throws Exception{
 
         // Create a new instance of Selenium
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.firefoxdriver().setup();
 
-        // Use WebDriver to open a new instance of Chrome
+        // Use WebDriver to open a new instance of firefox
         System.setProperty("webdriver.http.factory", "jdk-http-client");
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = new FirefoxDriver();
 
         // Instruct the driver to browse to the Makers website
         driver.get("https://makers.tech");
 
         // Take a screenshot of what's currently on the page,
         // and store it in a file 'makers.png' in your project root
-        takeScreenshot(driver, "makers.png");
+        takeScreenshot(driver, "makers.firefox.png");
 
         // Find the title of the webpage (the value inside the HTML
         // <title> element) and print it to the terminal
