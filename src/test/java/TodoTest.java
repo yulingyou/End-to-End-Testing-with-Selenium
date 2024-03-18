@@ -10,7 +10,7 @@ public class TodoTest {
 
     @BeforeAll
     static void launchBrowser() {
-        WebDriverManager.firefoxdriver().setup();
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
     }
 
