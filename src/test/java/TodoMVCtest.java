@@ -29,7 +29,12 @@ public class TodoMVCtest {
         driver.findElement((By.id("todo-input"))).click();
         driver.findElement((By.id("todo-input"))).sendKeys("Buy some milk");
         driver.findElement((By.id("todo-input"))).sendKeys(Keys.ENTER);
-        Thread.sleep(2000);
+//        Thread.sleep(2000); or
+//        Implicit wait
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        //selectItemInList(1)
+        //WebElement listItem = driver.findElement(By.xpath("/html/body/section/main/ul/li[" + id + "]/div/label"
+        //selectItemInList("Buy some milk")
         WebElement buyMilk = driver.findElement(By.xpath("/html/body/section/main/ul/li[1]/div/label"));
         assertTrue(buyMilk.isDisplayed());
         WebElement countItem = driver.findElement(By.className("todo-count"));
