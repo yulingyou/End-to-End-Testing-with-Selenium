@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -40,15 +39,4 @@ public class BbcLocalNewsPage {
         wait.until(ExpectedConditions.textToBe(searchResultsHeadingBy,resultsText));
     }
 
-
-    @Test
-    public void shouldFindSearchResult(){
-
-        BbcLocalNewsPage searchPage = new BbcLocalNewsPage(driver);
-        searchPage.navigate();
-        searchPage.searchFor("Guildford");
-        searchPage.waitForResultsText("Guildford");
-        assertEquals("Guildford",searchPage.getSearchResultsHeading());
-
-    }
 }
